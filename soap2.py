@@ -14,7 +14,7 @@ def call_web_service(url, headers, body):
         return None
 
 def compare_xml_responses(xml1, xml2):
-    #  XMLs para objetos ElementTree
+    #  XMLs para  ElementTree
     try:
         root1 = ET.fromstring(xml1)
         root2 = ET.fromstring(xml2)
@@ -26,41 +26,41 @@ def compare_xml_responses(xml1, xml2):
     return ET.tostring(root1) == ET.tostring(root2)
 
 def main():
-    # URL, headers e body do primeiro serviço web
-    url1 = "https://172.11717771.Web.Services.BKL.Tarifa/Tarifa"
+    # URL, headers e body do primeiro WS
+    url1 = "https:************"
     headers1 = {
         "Content-Type": "text/xml",
         "Authorization": "Bearer token1"
     }
     body1 = """
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tar="http://tarifa.webservice./">
+<soapenv:Envelope xmlns:soapenv="http://******************.webservice./">
    <soapenv:Header/>
    <soapenv:Body>
-      <tar:estruturaConsultaTarifa>
+      <tar:estttt>
          <dispositivoOrigem>
             <conteudoEnderecoIpOrigem>0000000</conteudoEnderecoIpOrigem>
             <identificadorDispositivoOrigem>00</identificadorDispositivoOrigem>
          </dispositivoOrigem>
          <autorizacao>
-            <identificadorPontoAtendimento>88080889</identificadorPontoAtendimento>
-            <dataAutorizacaoOrigem>20240722</dataAutorizacaoOrigem>
+            <identificadorPontoAtendimento>00000000</identificadorPontoAtendimento>
+            <dataAutorizacaoOrigem>20250722</dataAutorizacaoOrigem>
             <numeroAutorizacaoOrigem>0</numeroAutorizacaoOrigem>
-            <identificadorCodigoTransacao>8888888</identificadorCodigoTransacao>
+            <identificadorCodigoTransacao>0000</identificadorCodigoTransacao>
             <codigoCanalOrigem>null</codigoCanalOrigem>
          </autorizacao>
          <conta>
             <numeroAgencia>1</numeroAgencia>
-            <numeroConta>8888888</numeroConta>
+            <numeroConta>0000000000</numeroConta>
             <numeroVariacaoConta>0</numeroVariacaoConta>
-            <indicadorTipoConta>1</indicadorTipoConta>
+            <indicadorTipoConta>0</indicadorTipoConta>
          </conta>
-      </tar:estruturaConsultaTarifa>
+      </tar:estttt>
    </soapenv:Body>
 </soapenv:Envelope>
     """
 
-    # URL, headers e body do segundo serviço web
-    url2 = "https://177.1777.1777/Web.Services.Tarifa/Tarifa"
+    # URL, headers e body do segundo WS
+    url2 = "https:/************"
     headers2 = {
         "Content-Type": "text/xml",
         "Authorization": "Bearer token2",
@@ -68,33 +68,33 @@ def main():
              
                  }
     body2 = """
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tar="http://tarifa.webservice.servidor.integracao.banklink.mb.foton.la/">
+<soapenv:Envelope xmlns:soapenv="http://******************.webservice./">
    <soapenv:Header/>
    <soapenv:Body>
-      <tar:estruturaConsultaTarifa>
+      <tar:estttt>
          <dispositivoOrigem>
-            <conteudoEnderecoIpOrigem>172019000202028</conteudoEnderecoIpOrigem>
-            <identificadorDispositivoOrigem>28</identificadorDispositivoOrigem>
+            <conteudoEnderecoIpOrigem>0000000</conteudoEnderecoIpOrigem>
+            <identificadorDispositivoOrigem>00</identificadorDispositivoOrigem>
          </dispositivoOrigem>
          <autorizacao>
-            <identificadorPontoAtendimento>880009</identificadorPontoAtendimento>
-            <dataAutorizacaoOrigem>20240722</dataAutorizacaoOrigem>
+            <identificadorPontoAtendimento>00000000</identificadorPontoAtendimento>
+            <dataAutorizacaoOrigem>20250722</dataAutorizacaoOrigem>
             <numeroAutorizacaoOrigem>0</numeroAutorizacaoOrigem>
-            <identificadorCodigoTransacao>84023227</identificadorCodigoTransacao>
+            <identificadorCodigoTransacao>0000</identificadorCodigoTransacao>
             <codigoCanalOrigem>null</codigoCanalOrigem>
          </autorizacao>
          <conta>
-            <numeroAgencia>0</numeroAgencia>
-            <numeroConta>0000</numeroConta>
+            <numeroAgencia>1</numeroAgencia>
+            <numeroConta>0000000000</numeroConta>
             <numeroVariacaoConta>0</numeroVariacaoConta>
-            <indicadorTipoConta>1</indicadorTipoConta>
+            <indicadorTipoConta>0</indicadorTipoConta>
          </conta>
-      </tar:estruturaConsultaTarifa>
+      </tar:estttt>
    </soapenv:Body>
 </soapenv:Envelope>
     """
     
-    # Chamada aos serviços web
+    # Chamada WS
     response1 = call_web_service(url1, headers1, body1)
     response2 = call_web_service(url2, headers2, body2)
     
